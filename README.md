@@ -17,3 +17,15 @@ dataDir=/var/lib/zookeeper
 clientPort=2181 
 initLimit=5 
 syncLimit=2
+
+
+#To execute the application:
+1. Start your local instant of Apache Zookeeper and config per the configuration detailed above
+2. Run Zookeeper with the command: 'bin/zkServer.sh start'
+3. Download the a zip of the repo
+4. Unzip the repo
+5. Open the repo in an IDE
+6. Use the command interface of the IDE and navigate to the dir
+7. Build the apllication using: mvn clean package
+8. Run the application on multiple nodes: java -jar target/distributed-startup-0.0.1-SNAPSHOT.jar
+9. In the console ouput observe After Spring Boot has initialized all the beans, it will run the `@PostConstruct` method in our `StartupCoordinator` class. This is where the "We are started!" message will be printed if this is the first node to start up.
